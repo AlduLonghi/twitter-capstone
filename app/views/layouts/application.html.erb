@@ -10,6 +10,21 @@
   </head>
 
   <body>
-    <%= yield %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-2 px-0 sticky-top">
+        <ul class="sidebar">
+          <li>Hello
+          </li>
+        </ul>
+      </div>
+      <div class="col-xl-10 px-0">
+        <div class="navbar justify-content-end navbar-color py-4 mb-3">
+          <%= navbar %>
+        </div>
+        <%= yield %>
+        </div>
+      </div>
+  </div>
   </body>
 </html>

@@ -1,9 +1,10 @@
-<%= form_for :opinion do |f| %>
+<%= form_for(@opinion) do |f| %>
  <div class="form-group">
-    <%= f.text_field :content, autofocus: true, class: 'form-control'%>
+    <%= f.text_field :content, autofocus: true, class: 'form-control py-5'%>
+    <%= error_messages(@opinion, :content)%>
   </div>
 
-  <div class="actions">
+  <div>
     <%= f.submit "Publish", class: 'btn btn-primary mx-auto d-block mb-2'%>
   </div>
 <% end %>

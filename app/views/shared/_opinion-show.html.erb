@@ -1,0 +1,13 @@
+<% opinions.each do |opinion|%>
+  <div class="card mb-3">
+    <div class="row">
+      <div class="col-xl-1 px-1">
+      <%= image_tag 'dog.jpg', class: 'h-100 w-100'%>
+      </div>
+      <div class="col-xl-11 justify-content-around">
+      <p class="font-weight-bold author-name mb-0"><%= opinion.author.name%></p>
+      <p class="text-muted"><%= opinion.content %></p>
+      </div>
+    </div>
+  </div>
+<%end%>

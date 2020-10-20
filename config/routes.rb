@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :opinions
   resources :followings
   resources :favorites, only: [:new, :create, :destroy]
+  resources :users, only: [:show, :destroy]
 end

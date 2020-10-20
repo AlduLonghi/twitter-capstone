@@ -1,0 +1,33 @@
+<div class="container-fluid h-100">
+  <div class="row justify-content-between h-100">
+    <div class="col-lg-8 px-0">
+    <%= image_tag 'cover-img.jpg', class: 'd-block w-100 cover-img mb-4' %>
+    <%= render partial: "shared/opinion-show", locals: {opinions: @user.opinions} %>
+    </div>
+    <div class="col-lg-4 d-flex justify-content-center h-100 my-0">
+      <div class="user-show white-backg pt-5">
+        <%= image_tag 'dog.jpg', class: 'prof-img d-block mx-auto rounded-circle' %>
+        <h3 class="text-center user-name font-weight-bold pt-3"> <%= @user.name %> <h3>
+        <div class="text-center">
+          <%= follow_btns(@user)%>
+        </div>
+        <div class="row mx-0 mt-3 border-bottom border-top">
+          <div class="col-lg-4">
+           <p class="counts text-center font-weight-bold mt-2"> <%= @user.opinions.count %> </p>
+           <p class="text-center counts-text text-capitalize"> opinions </p>
+          </div>
+          <div class="col-lg-4">
+          <p class="counts text-center font-weight-bold mt-2"> <%= @user.followers.count %> </p>
+          <p class="text-center counts-text text-capitalize"> followers </p>
+          </div>
+          <div class="col-lg-4">
+          <p class="counts text-center  font-weight-bold mt-2"> <%= @user.followed_users.count %> </p>
+           <p class="text-center counts-text text-capitalize"> following </p>
+          </div>
+        </div>
+        <p class="font-weight-bold text-center section-head my-4 text-uppercase"> Followed by </p>
+        <%= render partial: "shared/who-to-follow", locals: {users: @users}%>
+      </div>
+    </div>
+  </div>
+</div>

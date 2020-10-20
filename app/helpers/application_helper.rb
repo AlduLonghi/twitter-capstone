@@ -8,12 +8,14 @@ module ApplicationHelper
   end
 
   def navbar
-    content_tag(:ul, class: 'navbar-nav justify-content-end') do
+    content_tag(:ul, class: 'navbar-nav justify-content-end flex-row') do
       if user_signed_in?
+        content_tag(:li, content_tag(:p, current_user.name, class: 'd-block mr-3 mt-3 py-1 font-weight-bold text-uppercase text-muted')) +
         content_tag(:li, link_to('Sign out',
                                  destroy_user_session_path,
                                  method: :delete, data: { confirm: 'Are you sure?' },
-                                 class: 'btn btn-warning btn-sm mx-1'), class: 'nav-item active')
+                                 class: 'btn btn-warning btn-sm mx-1'), class: 'nav-item active mt-3')
+        
       end
     end
   end
@@ -27,7 +29,7 @@ module ApplicationHelper
     if !current_user.followed_users.include?(user)
       link_to('Follow', followings_path(id: user.id), class: 'btn btn-primary btn-sm', method: :post)
     else
-      link_to('Unfollow', following_path(user, current_user), class: 'btn btn-secondary btn-sm', method: :delete)
+      link_to('Unfollow', following_path(id: user.id), class: 'btn btn-secondary btn-sm', method: :delete)
     end
   end
 

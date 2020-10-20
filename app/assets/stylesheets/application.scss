@@ -21,13 +21,13 @@
  $grey-text-color: #C9CACC;
  $grey-back-color: #F5F6F8;
 
- body {
+ html, body{
     background-color: $grey-back-color;
  }
 
  .user-box {
   box-shadow: 0 0 10px #98a4a5;
-  margin-top: 15%;
+  margin-top: 10%;
  }
 
  .user-container {
@@ -70,4 +70,30 @@
      color: red;
  }
 
+ .cover-img {
+     height: 22rem;
+ }
+
+ .prof-img {
+     height: 9rem;
+     width: 9rem;
+     border: 1px solid $grey-text-color;
+ }
+
+ .user-name {
+     font-size: 1.5rem;
+ }
+
+ .user-show {
+     width: 85%;
+ }
+
+ .counts {
+  margin-bottom: 0.5rem;
+ }
+
+ .counts-text {
+     font-size: 1rem;
+     color: grey;
+ }
  

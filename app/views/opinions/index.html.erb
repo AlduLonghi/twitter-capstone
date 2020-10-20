@@ -1,11 +1,13 @@
 <div class="container-fluid">
   <div class="row justify-content-around">
-    <div class="col-xl-8">
+    <div class="col-lg-8">
       <%= render 'opinion-form'%>
       <%= render partial: "shared/opinion-show", locals: {opinions: @opinions_timeline} %>
     </div>
-    <div class="col-xl-3">
-      </div>
+    <div class="col-lg-3">
+      <h3 class="font-weight-bold text-center section-head mb-4 text-uppercase"> Who to follow </h3>
+      <%= render partial: "shared/who-to-follow", locals: {users: to_follow}%>
+    </div>
     </div>
   </div>
 </div>

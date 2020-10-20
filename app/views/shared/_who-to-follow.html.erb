@@ -1,0 +1,11 @@
+<% users.each do |user| %>
+  <div class="row mb-3 white-backg py-2 px-2">
+    <div class="col-lg-2 px-0">
+      <%= image_tag 'dog.jpg', class: 'd-block w-100 h-100' %>
+    </div>
+    <div class="col-lg-10">
+      <p class="font-weight-bold author-name mb-1"><%= user.name %></p>
+      <%= follow_btns(user)%>
+    </div>
+  </div>
+<%end%>

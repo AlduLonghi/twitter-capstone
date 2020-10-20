@@ -1,12 +1,15 @@
 <% opinions.each do |opinion|%>
-  <div class="card mb-3">
-    <div class="row">
-      <div class="col-xl-1 px-1">
-      <%= image_tag 'dog.jpg', class: 'h-100 w-100'%>
+  <div class="mb-3 py-2 px-2 white-backg">
+    <div class="row mx-0">
+      <div class="col-lg-1 px-0">
+      <%= image_tag 'dog.jpg', class: 'd-block w-100 h-100' %>
       </div>
-      <div class="col-xl-11 justify-content-around">
+      <div class="col-lg-11">
       <p class="font-weight-bold author-name mb-0"><%= opinion.author.name%></p>
       <p class="text-muted"><%= opinion.content %></p>
+      <div class="d-flex justify-content-end">
+      <%= fav_btn(opinion)%>
+      </div>
       </div>
     </div>
   </div>

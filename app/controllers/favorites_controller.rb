@@ -1,14 +1,11 @@
 class FavoritesController < ApplicationController
   before_action :authenticate_user!
 
-  def new
-  end
+  def new; end
 
   def create
-   @favorite = current_user.favorites.build(opinion_id: params[:opinion_id])
-   if @favorite.save
-    redirect_to root_path
-   end
+    @favorite = current_user.favorites.build(opinion_id: params[:opinion_id])
+    redirect_to root_path if @favorite.save
   end
 
   def destroy
@@ -16,5 +13,4 @@ class FavoritesController < ApplicationController
     @favorite.destroy
     redirect_to root_path
   end
-
 end

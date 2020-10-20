@@ -10,19 +10,20 @@ module ApplicationHelper
   def navbar
     content_tag(:ul, class: 'navbar-nav justify-content-end flex-row') do
       if user_signed_in?
-        content_tag(:li, content_tag(:p, current_user.name, class: 'd-block mr-3 mt-3 py-1 font-weight-bold text-uppercase text-muted')) +
-        content_tag(:li, link_to('Sign out',
-                                 destroy_user_session_path,
-                                 method: :delete, data: { confirm: 'Are you sure?' },
-                                 class: 'btn btn-warning btn-sm mx-1'), class: 'nav-item active mt-3')
-        
+        content_tag(:li, content_tag(:p, current_user.name,
+                                     class: 'd-block mr-3 mt-3 py-1 font-weight-bold text-uppercase text-muted')) +
+          content_tag(:li, link_to('Sign out',
+                                   destroy_user_session_path,
+                                   method: :delete, data: { confirm: 'Are you sure?' },
+                                   class: 'btn btn-warning btn-sm mx-1'), class: 'nav-item active mt-3')
+
       end
     end
   end
 
   def to_follow
     ids = current_user.followed_users.pluck(:id) << current_user.id
-    users_to_follow = User.where.not(id: ids)
+    User.where.not(id: ids)
   end
 
   def follow_btns(user)
@@ -36,9 +37,10 @@ module ApplicationHelper
   def fav_btn(opinion)
     fav = Favorite.find_by(user_id: current_user.id, opinion_id: opinion.id)
     if fav
-      link_to(content_tag(:i, nil, :class => "fa fa-heart red-color"), favorite_path(opinion.id), method: :delete)
+      link_to(content_tag(:i, nil, class: 'fa fa-heart red-color'), favorite_path(opinion.id), method: :delete)
     else
-      link_to(content_tag(:i, nil, :class => "fa fa-heart grey-color"), favorites_path(opinion_id: opinion.id), method: :post)
+      link_to(content_tag(:i, nil, class: 'fa fa-heart grey-color'),
+              favorites_path(opinion_id: opinion.id), method: :post)
     end
   end
 end

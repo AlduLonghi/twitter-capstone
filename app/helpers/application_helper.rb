@@ -51,4 +51,14 @@ module ApplicationHelper
     link_to('Edit', edit_opinion_path(opinion), class: 'text-muted mr-2') +
       link_to('Delete', opinion_path(opinion), class: 'text-muted mr-2', method: :delete)
   end
+
+  def user_navbar 
+    if user_logged_in? 
+      content_tag(:div, class: 'w-75 d-flex mx-auto') do
+        image_tag("prof-pic.jpg", class: 'cu-prof-pic')
+      end
+    else
+
+    end
+  end
 end

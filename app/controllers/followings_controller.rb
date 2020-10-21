@@ -1,6 +1,15 @@
 class FollowingsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @user = User.find_by(id: params[:user_id])
+    if params[:users] == 'followers'
+      @followings = @user.followers
+    else
+      @followings = @user.followed_users
+    end
+  end
+
   def new; end
 
   def create

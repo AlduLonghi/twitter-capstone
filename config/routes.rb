@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root to: "opinions#index"
   resources :opinions
   resources :followings
-  resources :favorites, only: [:new, :create, :destroy]
+  resources :favorites, only: [:index, :new, :create, :destroy]
   resources :users, only: [:show, :destroy]
 end

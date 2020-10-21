@@ -1,5 +1,5 @@
 class Opinion < ApplicationRecord
-  validates :content, presence: true, length: { maximum: 300 }
+  validates :content, presence: true, length: { maximum: 140 }
 
   scope :most_recent_opinions, -> { order(created_at: :desc) }
   belongs_to :author, class_name: 'User'

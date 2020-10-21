@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :opinions, foreign_key: :author_id, dependent: :destroy
-  has_many :favorites, dependent: :destroy
+  has_many :favorites, foreign_key: :user_id, dependent: :destroy
+  has_many :favorite_opinions, through: :favorites, source: :opinion
   has_many :followings, foreign_key: :follower_id, dependent: :destroy
   has_many :followed_users, through: :followings, source: :followed
   has_many :inverse_followings, class_name: 'Following', foreign_key: :followed_id, dependent: :destroy

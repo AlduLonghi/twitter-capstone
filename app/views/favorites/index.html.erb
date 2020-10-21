@@ -1,0 +1,4 @@
+<div class="w-75 mx-auto">
+<h1 class="all-op text-uppercase font-weight-bold white-backg py-3 px-2 text-center"><%= "#{@user.name}'s favorite opinions"%></h1>
+<%= render partial: 'shared/opinion-show', locals: {opinions: @favorites} %>
+</div>

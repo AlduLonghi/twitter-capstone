@@ -20,6 +20,7 @@
  $navbar-color: #51A5E6;
  $grey-text-color: #C9CACC;
  $grey-back-color: #F5F6F8;
+ $box-shadow: #E6E6E6;
 
  html, body{
     background-color: $grey-back-color;
@@ -93,7 +94,7 @@
  }
 
  .user-show {
-     width: 85%;
+     width: 95%;
  }
 
  .counts {
@@ -101,7 +102,7 @@
  }
 
  .counts-text {
-     font-size: 1rem;
+     font-size: 0.8rem;
      color: grey;
  }
  
@@ -112,4 +113,13 @@
 
  .opinion-container {
     word-wrap: break-word;
+ }
+
+ .opinion-box {
+    box-shadow: 0 0 7px $box-shadow;
+ }
+
+ .all-op {
+  font-size: 1rem;
+  color: $navbar-color;
  }

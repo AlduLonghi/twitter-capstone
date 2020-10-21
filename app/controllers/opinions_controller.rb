@@ -14,8 +14,29 @@ class OpinionsController < ApplicationController
       redirect_to root_path
     else
       opinions_timeline
-      render :index
+      path = request.path
+      render path.to_s
     end
+  end
+
+  def edit
+    @opinion = Opinion.find_by(id: params[:id])
+  end
+
+  def update
+    @opinion = Opinion.find_by(id: params[:id])
+    if @opinion.update_attributes(opinion_params)
+      redirect_to root_path
+    else
+      opinions_timeline
+      render :edit
+    end
+  end
+
+  def destroy
+    @opinion = Opinion.find_by(id: params[:id])
+    @opinion.destroy
+    redirect_back(fallback_location: root_path)
   end
 
   private

@@ -2,6 +2,7 @@
   <div class="row justify-content-between h-100">
     <div class="col-lg-8 px-0">
     <%= image_tag 'cover-img.jpg', class: 'd-block w-100 cover-img mb-4' %>
+    <%= show_form(@user) %>
     <%= render partial: "shared/opinion-show", locals: {opinions: @user.opinions} %>
     </div>
     <div class="col-lg-4 d-flex justify-content-center h-100 my-0">

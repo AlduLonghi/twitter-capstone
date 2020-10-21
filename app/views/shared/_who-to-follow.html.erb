@@ -4,7 +4,7 @@
       <%= image_tag 'dog.jpg', class: 'd-block w-100 h-100' %>
     </div>
     <div class="col-lg-10">
-      <p class="font-weight-bold author-name mb-1"><%= user.name %></p>
+      <p class="font-weight-bold author-name mb-1"><%= link_to(user.name, user_path(user)) %></p>
       <%= follow_btns(user)%>
     </div>
   </div>

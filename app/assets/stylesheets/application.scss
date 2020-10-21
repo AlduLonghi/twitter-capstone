@@ -25,6 +25,14 @@
     background-color: $grey-back-color;
  }
 
+ a {
+     color: black;
+ }
+
+ a:hover {
+     color: black;
+ }
+ 
  .user-box {
   box-shadow: 0 0 10px #98a4a5;
   margin-top: 10%;
@@ -97,3 +105,7 @@
      color: grey;
  }
  
+ .edit-head {
+     font-size: 2rem;
+     color: $grey-text-color;
+ }

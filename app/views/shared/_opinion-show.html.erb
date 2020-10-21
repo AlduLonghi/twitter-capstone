@@ -7,8 +7,10 @@
       <div class="col-lg-11 opinion-container">
       <p class="font-weight-bold author-name mb-0"><%= link_to(opinion.author.name, user_path(opinion.author))%></p>
       <p class="text-muted"><%= opinion.content %></p>
-      <div class="d-flex justify-content-end">
+      <div class="d-flex justify-content-between">
+      <span>
       <%= edit_destroy(opinion.author, opinion) %>
+      </span>
       <%= fav_btn(opinion)%>
       </div>
       </div>

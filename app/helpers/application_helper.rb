@@ -27,6 +27,7 @@ module ApplicationHelper
   end
 
   def follow_btns(user)
+    return unless user != current_user
     if !current_user.followed_users.include?(user)
       link_to('Follow', followings_path(id: user.id), class: 'btn btn-primary btn-sm', method: :post)
     else

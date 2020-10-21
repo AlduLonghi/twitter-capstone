@@ -10,13 +10,13 @@ module ApplicationHelper
   def navbar
     content_tag(:ul, class: 'navbar-nav justify-content-between flex-row w-100') do
       if user_signed_in?
-        image_tag('computer.png', class: 'nav-logo') +
+        image_tag('speech-bubble.png', class: 'nav-logo') +
           content_tag(:li, link_to('Sign out',
                                    destroy_user_session_path,
                                    method: :delete, data: { confirm: 'Are you sure?' },
                                    class: 'btn btn-warning btn-sm mx- align-self-center'), class: 'd-flex')
       else
-        image_tag('computer.png', class: 'cu-prof-pic')
+        image_tag('speech-bubble.png', class: 'nav-logo')
       end
     end
   end
@@ -78,7 +78,7 @@ module ApplicationHelper
     else
       content_tag(:div, class: 'h-100 welcome-container mx-auto d-flex flex-column justify-content-center') do
         content_tag(:h1, 'Welcome to TwiTEC!', class: 'font-weight-bold welcome-text text-center align-middle') +
-          image_tag('computer.png', class: 'welcome-pic text-center d-block align-self-center')
+          image_tag('speech-bubble.png', class: 'welcome-pic text-center d-block align-self-center')
       end
     end
   end

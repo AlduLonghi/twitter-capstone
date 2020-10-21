@@ -43,11 +43,11 @@ module ApplicationHelper
               favorites_path(opinion_id: opinion.id), method: :post)
     end
   end
-  
+
   def edit_destroy(user, opinion)
-    if user == current_user
-      link_to('Edit', edit_opinion_path(opinion), class: 'text-muted mr-2') +
+    return unless user == current_user
+
+    link_to('Edit', edit_opinion_path(opinion), class: 'text-muted mr-2') +
       link_to('Delete', opinion_path(opinion), class: 'text-muted mr-2', method: :delete)
-    end
   end
 end

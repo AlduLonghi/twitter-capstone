@@ -1,8 +1,5 @@
 module OpinionsHelper
- def show_form(user)
-   if user == current_user
-     render partial: 'shared/opinion-form'
-   end
- end
-
+  def show_form(user)
+    render partial: 'shared/opinion-form' if user == current_user
+  end
 end

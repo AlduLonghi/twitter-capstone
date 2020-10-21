@@ -32,7 +32,7 @@
  a:hover {
      color: black;
  }
- 
+
  .user-box {
   box-shadow: 0 0 10px #98a4a5;
   margin-top: 10%;
@@ -108,4 +108,8 @@
  .edit-head {
      font-size: 2rem;
      color: $grey-text-color;
+ }
+
+ .opinion-container {
+    word-wrap: break-word;
  }

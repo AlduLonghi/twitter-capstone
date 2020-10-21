@@ -14,8 +14,7 @@ class OpinionsController < ApplicationController
       redirect_to root_path
     else
       opinions_timeline
-      path = request.path
-      render path.to_s
+      render :index
     end
   end
 

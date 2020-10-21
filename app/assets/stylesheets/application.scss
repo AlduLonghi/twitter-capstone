@@ -22,6 +22,7 @@
  $grey-back-color: #dde3f0;
  $box-shadow: #E6E6E6;
  $user-name-color:#657C90;
+ $welcome-font: 'Architects Daughter', cursive;
 
  html, body{
     background-color: $grey-back-color;
@@ -36,12 +37,12 @@
  }
 
  a:hover {
-     color: black;
+     color: unset;
  }
 
  .user-box {
   box-shadow: 0 0 10px #98a4a5;
-  margin-top: 10%;
+  margin-top: 22vh;
  }
 
  .user-container {
@@ -63,8 +64,7 @@
  }
 
  .prof-img {
-     width: 5rem;
-     height: 5rem;
+     height: 7vh;
  }
 
  .section-head {
@@ -136,8 +136,8 @@
  }
 
  .cu-prof-pic {
-     height: 4rem;
-     width: 4rem;
+     height: 4.5rem;
+     width: 4.5rem;
  }
 
  .cu-nav-name {
@@ -155,5 +155,29 @@
  }
 
  .cu-ul {
-     border: 1px solid #193366;
+    box-shadow: 0 0 3px #182a38;
  }
+
+ .cu-ul li {
+    box-shadow: 0 0 3px #182a38;
+ }
+
+ .welcome-text {
+     font-size: 3vw;
+     font-family: $welcome-font;
+     color: white;
+ }
+
+ .welcome-container {
+     width: 80%;
+ }
+
+ .welcome-pic {
+     width: 7rem;
+     height: 7rem;
+ }
+
+.nav-logo {
+    width: 3.2vw;
+    height: 6vh;
+}

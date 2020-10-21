@@ -6,8 +6,6 @@ class FavoritesController < ApplicationController
     @favorites = @user.favorite_opinions
   end
 
-  
-
   def new; end
 
   def create

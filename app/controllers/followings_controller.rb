@@ -3,11 +3,11 @@ class FollowingsController < ApplicationController
 
   def index
     @user = User.find_by(id: params[:user_id])
-    if params[:users] == 'followers'
-      @followings = @user.followers
-    else
-      @followings = @user.followed_users
-    end
+    @followings = if params[:users] == 'followers'
+                    @user.followers
+                  else
+                    @user.followed_users
+                  end
   end
 
   def new; end

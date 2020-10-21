@@ -53,12 +53,27 @@ module ApplicationHelper
   end
 
   def user_navbar 
-    if user_logged_in? 
-      content_tag(:div, class: 'w-75 d-flex mx-auto') do
-        image_tag("prof-pic.jpg", class: 'cu-prof-pic')
+    if user_signed_in? 
+      content_tag(:div, class: 'w-75 d-flex mx-auto mt-3') do
+        image_tag("prof-pic.jpg", class: 'cu-prof-pic') +
+        content_tag(:p, current_user.name, class: 'cu-nav-name font-weight-bold ml-3 mt-3')
+      end +
+      content_tag(:div) do
+        content_tag(:ul, class: 'row mx-0 px-0 mt-3 cu-ul') do
+          content_tag(:li, class: 'col-lg-6') do
+            content_tag(:p, current_user.followers.count, class: 'font-weight-bold text-center cu-counts mt-2 mb-1') +
+            content_tag(:p, link_to('followers', followings_path(user_id: current_user.id, users: "followers")),
+                        class: 'font-weight-bold text-center cu-counts-text text-capitalize')
+          end +
+          content_tag(:li, class: 'col-lg-6') do
+            content_tag(:p, current_user.followed_users.count, class: 'font-weight-bold text-center cu-counts mt-2 mb-1') +
+            content_tag(:p, link_to('following', followings_path(user_id: current_user.id, users: "following")),
+                        class: 'font-weight-bold text-center cu-counts-text text-capitalize')
+          end
+        end
       end
     else
-
     end
   end
+
 end

@@ -19,15 +19,20 @@
  $sidebar-color: #213346;
  $navbar-color: #51A5E6;
  $grey-text-color: #C9CACC;
- $grey-back-color: #F5F6F8;
+ $grey-back-color: #dde3f0;
  $box-shadow: #E6E6E6;
+ $user-name-color:#657C90;
 
  html, body{
     background-color: $grey-back-color;
  }
 
  a {
-     color: black;
+     color: unset;
+ }
+
+ ul {
+     list-style: none;
  }
 
  a:hover {
@@ -128,4 +133,27 @@
 
  .opinion-content {
      font-size: 1.1rem;
+ }
+
+ .cu-prof-pic {
+     height: 4rem;
+     width: 4rem;
+ }
+
+ .cu-nav-name {
+     font-size: 1.2rem;
+     color: $user-name-color;
+ }
+
+ .cu-counts {
+     font-size: 1.2rem;
+     color: $grey-text-color;
+ }
+
+ .cu-counts-text {
+     color: $user-name-color;
+ }
+
+ .cu-ul {
+     border: 1px solid #193366;
  }

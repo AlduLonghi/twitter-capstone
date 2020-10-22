@@ -20,20 +20,20 @@ module ApplicationHelper
       end
     end
   end
-  
+
   def to_follow
     ids = current_user.followed_users.pluck(:id) << current_user.id
     User.where.not(id: ids).take(15)
   end
- 
+
   def follow_btns(user)
-    if  user != current_user
+    if user != current_user
       if !current_user.followed_users.include?(user)
         link_to('Follow', followings_path(id: user.id), class: 'btn btn-primary btn-sm', method: :post)
       else
         link_to('Unfollow', following_path(id: user.id), class: 'btn btn-secondary btn-sm', method: :delete)
       end
-    else 
+    else
       link_to('Edit your profile', edit_user_registration_path(user), class: 'btn btn-success btn-sm')
     end
   end
@@ -42,14 +42,18 @@ module ApplicationHelper
     fav = Favorite.find_by(user_id: current_user.id, opinion_id: opinion.id)
     if fav
       content_tag(:span, class: 'd-flex') do
-      link_to(content_tag(:i, nil, class: 'fa fa-heart red-color'), favorite_path(opinion.id), method: :delete) +
-      (content_tag(:p, opinion.favorites.count, class: 'ml-2 fav-count font-weight-bold') if opinion.favorites.count > 0)
+        link_to(content_tag(:i, nil, class: 'fa fa-heart red-color'), favorite_path(opinion.id), method: :delete) +
+          (if opinion.favorites.count.positive?
+             content_tag(:p, opinion.favorites.count, class: 'ml-2 fav-count font-weight-bold')
+           end)
       end
     else
       content_tag(:span, class: 'd-flex') do
-      link_to(content_tag(:i, nil, class: 'fa fa-heart grey-color'),
-              favorites_path(opinion_id: opinion.id), method: :post) +
-      (content_tag(:p, opinion.favorites.count, class: 'ml-2 fav-count font-weight-bold') if opinion.favorites.count > 0)
+        link_to(content_tag(:i, nil, class: 'fa fa-heart grey-color'),
+                favorites_path(opinion_id: opinion.id), method: :post) +
+          (if opinion.favorites.count.positive?
+             content_tag(:p, opinion.favorites.count, class: 'ml-2 fav-count font-weight-bold')
+           end)
       end
     end
   end

@@ -1,9 +1,9 @@
 <% users.each do |user| %>
   <div class="row mb-3 white-backg py-2 px-2 mx-0">
-    <div class="col-lg-2 px-0">
-      <%= image_tag(user.prof_pic_attached, class: 'd-block w-100 h-100') %>
+    <div class="col-lg-3 px-0 d-flex align-items-center">
+      <%= image_tag(user.prof_pic_attached, class: 'd-block who-to-img mt-1 mx-auto') %>
     </div>
-    <div class="col-lg-10">
+    <div class="col-lg-9 pl-1">
       <p class="font-weight-bold author-name mb-1"><%= link_to(user.name, user_path(user)) %></p>
       <%= follow_btns(user)%>
     </div>

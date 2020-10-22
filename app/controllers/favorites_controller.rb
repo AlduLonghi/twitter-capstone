@@ -10,12 +10,12 @@ class FavoritesController < ApplicationController
 
   def create
     @favorite = current_user.favorites.build(opinion_id: params[:opinion_id])
-    redirect_to root_path if @favorite.save
+    redirect_back(fallback_location: root_path) if @favorite.save
   end
 
   def destroy
     @favorite = Favorite.find_by(user_id: current_user.id, opinion_id: params[:id])
     @favorite.destroy
-    redirect_to root_path
+    redirect_back(fallback_location: root_path)
   end
 end

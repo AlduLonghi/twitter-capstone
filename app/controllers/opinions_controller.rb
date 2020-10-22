@@ -11,7 +11,7 @@ class OpinionsController < ApplicationController
   def create
     @opinion = current_user.opinions.build(opinion_params)
     if @opinion.save
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
     else
       opinions_timeline
       render :index
@@ -27,7 +27,7 @@ class OpinionsController < ApplicationController
     set_opinions
     @opinion = @opinions.find_by(id: params[:id])
     if @opinion.update_attributes(opinion_params)
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
     else
       opinions_timeline
       render :edit

@@ -63,7 +63,7 @@ module ApplicationHelper
   def user_navbar
     if user_signed_in?
       user_nav_signedin +
-      nav_site_nav
+        nav_site_nav
     else
       user_nav_notsignedin
     end
@@ -96,16 +96,16 @@ module ApplicationHelper
     content_tag(:ul, class: 'nav flex-column site-nav pl-4') do
       content_tag(:li, class: 'd-flex') do
         content_tag(:i, nil, class: 'fas fa-home mr-2 h-50 mt-2') +
-        link_to(content_tag(:p, 'Homepage', class: 'font-weight-bold mt-2'), root_path)
+          link_to(content_tag(:p, 'Homepage', class: 'font-weight-bold mt-2'), root_path)
       end +
-      content_tag(:li, class: 'd-flex') do
-        content_tag(:i, nil, class: 'fas fa-user mr-3 h-50 mt-2') +
-        link_to(content_tag(:p, 'Profile', class: 'font-weight-bold mt-2'), user_path(current_user))
-      end +
-      content_tag(:li, class: 'd-flex') do
-        content_tag(:i, nil, class: 'fas fa-chart-line mr-2 h-50 mt-2') +
-        link_to(content_tag(:p, 'Trends', class: 'font-weight-bold mt-2'), trends_path)
-      end 
+        content_tag(:li, class: 'd-flex') do
+          content_tag(:i, nil, class: 'fas fa-user mr-2 h-50 mt-2') +
+            link_to(content_tag(:p, 'Profile', class: 'font-weight-bold mt-2'), user_path(current_user))
+        end +
+        content_tag(:li, class: 'd-flex') do
+          content_tag(:i, nil, class: 'fas fa-chart-line mr-2 h-50 mt-2') +
+            link_to(content_tag(:p, 'Trends', class: 'font-weight-bold mt-2'), trends_path)
+        end
     end
   end
 

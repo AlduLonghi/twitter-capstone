@@ -1,7 +1,7 @@
 describe 'Following Process', type: :feature do
     before :each do
-      @user = User.create(name: 'enzolonghi6', email: 'enzojaja@gmail123.com', password: '123456', password_confirmation: '123456')
-      @user2 = User.create(name: 'cocolonghi6', email: 'cocojaja@gmail123.com', password: '123456', password_confirmation: '123456')
+      @user = User.create(name: 'enzolonghi8', email: 'enzojaja8@gmail123.com', password: '123456', password_confirmation: '123456')
+      @user2 = User.create(name: 'cocolonghi8', email: 'cocojaja8@gmail123.com', password: '123456', password_confirmation: '123456')
     end
   
     it 'Follow a user' do

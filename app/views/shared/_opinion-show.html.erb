@@ -9,9 +9,10 @@
         <p class="text-muted pt-2"><%= opinion.content %></p>
       <div class="d-flex justify-content-between mt-auto">
       <span>
-      <%= edit_destroy(opinion.author, opinion) %>
+        <%= edit_destroy(opinion.author, opinion) %>
       </span>
-      <%= fav_btn(opinion)%>
+        <p class="date"><%= opinion.created_at.to_date %></p>
+        <%= fav_btn(opinion)%>
       </div>
       </div>
     </div>

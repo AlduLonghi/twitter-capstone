@@ -19,10 +19,12 @@ class OpinionsController < ApplicationController
   end
 
   def edit
+    set_opinions
     @opinion = @opinions.find_by(id: params[:id])
   end
 
   def update
+    set_opinions
     @opinion = @opinions.find_by(id: params[:id])
     if @opinion.update_attributes(opinion_params)
       redirect_to root_path
@@ -33,6 +35,7 @@ class OpinionsController < ApplicationController
   end
 
   def destroy
+    set_opinions
     @opinion = @opinions.find_by(id: params[:id])
     @opinion.destroy
     redirect_back(fallback_location: root_path)
@@ -52,8 +55,8 @@ class OpinionsController < ApplicationController
 
   def opinions_timeline
     ids = current_user.followed_users.pluck(:id) << current_user.id
-    opinions = set_opinions
-    @opinions_timeline = opinions.where(author_id: ids).most_recent_opinions
+    set_opinions
+    @opinions_timeline = @opinions.where(author_id: ids).most_recent_opinions
   end
 
   def opinion_params

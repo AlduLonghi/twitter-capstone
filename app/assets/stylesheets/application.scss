@@ -185,12 +185,12 @@ a:hover {
 }
 
 .who-to-img {
-    width: 3.7vw;
-    height: 3.7vw;
+  width: 3.7vw;
+  height: 3.7vw;
 }
 
 .who-to-container {
-    box-shadow: 0 0 3px $box-shadow;
+  box-shadow: 0 0 3px $box-shadow;
 }
 
 .site-nav {
@@ -211,3 +211,7 @@ a:hover {
   color: $navbar-color;
 }
 
+.date {
+  font-size: 0.9rem;
+  color: $grey-text-color;
+}

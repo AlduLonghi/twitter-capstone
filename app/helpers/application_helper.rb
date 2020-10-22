@@ -104,7 +104,7 @@ module ApplicationHelper
       end +
       content_tag(:li, class: 'd-flex') do
         content_tag(:i, nil, class: 'fas fa-chart-line mr-2 h-50 mt-2') +
-        content_tag(:p, 'Trends', class: 'font-weight-bold mt-2')
+        link_to(content_tag(:p, 'Trends', class: 'font-weight-bold mt-2'), trends_path)
       end 
     end
   end

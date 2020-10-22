@@ -1,11 +1,20 @@
 <div class="row">
   <div class="col-lg-4">
+    <span class="trend-title text-uppercase font-weight-bold white-backg text-center d-block mb-3">
+      Today
+    </span>
     <%= render partial: 'shared/opinion-show', locals: {opinions: @today_trend}%>
   </div>
   <div class="col-lg-4">
-
+    <span class="trend-title text-uppercase font-weight-bold white-backg text-center d-block mb-3">
+      last week
+    </span>
+    <%= render partial: 'shared/opinion-show', locals: {opinions: @week_trend}%>
   </div>
   <div class="col-lg-4">
-
+    <span class="trend-title text-uppercase font-weight-bold white-backg text-center d-block mb-3">
+      historical
+    </span>
+    <%= render partial: 'shared/opinion-show', locals: {opinions: @historical}%>
   </div>
 </div>

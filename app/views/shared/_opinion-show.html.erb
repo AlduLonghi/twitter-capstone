@@ -2,7 +2,7 @@
   <div class="mb-3 ml-2 py-2 px-2 white-backg opinion-box">
     <div class="row mx-0">
       <div class="col-lg-2 px-0">
-      <%= image_tag 'prof-pic.jpg', class: 'd-block w-100' %>
+      <%= image_tag(opinion.author.prof_pic_attached, class: 'd-block w-100') %>
       </div>
       <div class="col-lg-10 opinion-container">
         <p class="font-weight-bold author-name mb-0"><%= link_to(opinion.author.name, user_path(opinion.author))%></p>

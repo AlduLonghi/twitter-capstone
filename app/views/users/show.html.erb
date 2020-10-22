@@ -1,14 +1,14 @@
 <div class="container-fluid">
   <div class="row justify-content-between">
     <div class="col-lg-8 px-0">
-    <%= image_tag 'cover-img.jpg', class: 'd-block w-100 cover-img mb-4' %>
+    <%= image_tag(@user.cover_pic_attached, class: 'd-block w-100 cover-img mb-4') %>
     <%= show_form(@user) %>
     <h1 class="all-op text-uppercase font-weight-bold white-backg py-3 px-2"><%= "#{@user.name}'s opinions"%></h1>
-    <%= render partial: "shared/opinion-show", locals: {opinions: @user.opinions} %>
+    <%= render partial: "shared/opinion-show", locals: {opinions: @user.opinions.most_recent_opinions} %>
     </div>
     <div class="col-lg-4 d-flex justify-content-center my-0">
       <div class="user-show white-backg pt-5">
-        <%= image_tag 'prof-pic.jpg', class: 'prof-img d-block mx-auto rounded-circle' %>
+        <%= image_tag(@user.prof_pic_attached, class: 'prof-img d-block mx-auto rounded-circle') %>
         <h3 class="text-center user-name font-weight-bold pt-3"> <%= @user.name %> <h3>
         <div class="text-center">
           <%= follow_btns(@user)%>

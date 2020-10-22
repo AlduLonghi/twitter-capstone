@@ -42,7 +42,8 @@ class OpinionsController < ApplicationController
 
   def opinions_timeline
     ids = current_user.followed_users.pluck(:id) << current_user.id
-    @opinions_timeline = Opinion.where(author_id: ids).most_recent_opinions
+    opinions = Opinion.all.includes(:author, :favorites)
+    @opinions_timeline = opinions.where(author_id: ids).most_recent_opinions
   end
 
   def opinion_params

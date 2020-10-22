@@ -38,6 +38,10 @@ class OpinionsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
+  def trends
+    @today_trend = Opinion.most_favorites.today_trend
+  end
+
   private
 
   def opinions_timeline

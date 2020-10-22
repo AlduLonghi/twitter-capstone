@@ -82,7 +82,7 @@ a:hover {
 }
 
 .cover-img {
-  height: 22rem;
+  height: 18vw;
 }
 
 .prof-img {
@@ -187,4 +187,21 @@ a:hover {
 .who-to-img {
     width: 3.7vw;
     height: 3.7vw;
+}
+
+.who-to-container {
+    box-shadow: 0 0 3px $box-shadow;
+}
+
+.site-nav {
+  color: $user-name-color;
+  font-size: 1.2rem;
+}
+
+.site-nav li {
+  height: 2.5vw;
+}
+
+.error-warning {
+  font-size: 1.2rem;
 }

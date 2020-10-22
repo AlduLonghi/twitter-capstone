@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   def show
-    @user = User.all.includes(:followers, :followed_users, :opinions, :favorites)
-    @user = @user.find_by(id: params[:id])
-    @users = @user.followers.take(10)
+    @users = User.all.includes(:followers, :followed_users, :opinions, :favorites)
+    @user = @users.find_by(id: params[:id])
+    @followed_by = @user.followers.where.not(id: current_user.id).take(10)
     @opinion = Opinion.new
   end
 end

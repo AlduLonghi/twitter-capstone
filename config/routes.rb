@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :followings
   resources :favorites, only: [:index, :new, :create, :destroy]
   resources :users, only: [:show, :destroy]
+
+  get 'trends', to: "opinions#trends"
 end

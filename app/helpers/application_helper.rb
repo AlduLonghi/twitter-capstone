@@ -21,11 +21,6 @@ module ApplicationHelper
     end
   end
 
-  def to_follow
-    ids = current_user.followed_users.pluck(:id) << current_user.id
-    User.where.not(id: ids)
-  end
-
   def follow_btns(user)
     return unless user != current_user
 
@@ -55,31 +50,39 @@ module ApplicationHelper
 
   def user_navbar
     if user_signed_in?
-      content_tag(:div, class: 'w-75 d-flex mx-auto mt-3') do
-        image_tag('prof-pic.jpg', class: 'cu-prof-pic') +
-          content_tag(:p, link_to(current_user.name, user_path(current_user)),
-                      class: 'cu-nav-name font-weight-bold ml-3 mt-4')
-      end +
-        content_tag(:div) do
-          content_tag(:ul, class: 'row mx-0 px-0 mt-3 cu-ul') do
-            content_tag(:li, class: 'col-lg-6') do
-              content_tag(:p, current_user.followers.count, class: 'font-weight-bold text-center cu-counts mt-2 mb-1') +
-                content_tag(:p, link_to('followers', followings_path(user_id: current_user.id, users: 'followers')),
-                            class: 'font-weight-bold text-center cu-counts-text text-capitalize')
-            end +
-              content_tag(:li, class: 'col-lg-6') do
-                content_tag(:p, current_user.followed_users.count,
-                            class: 'font-weight-bold text-center cu-counts mt-2 mb-1') +
-                  content_tag(:p, link_to('following', followings_path(user_id: current_user.id, users: 'following')),
-                              class: 'font-weight-bold text-center cu-counts-text text-capitalize')
-              end
-          end
-        end
+      user_nav_signedin
     else
-      content_tag(:div, class: 'h-100 welcome-container mx-auto d-flex flex-column justify-content-center') do
-        content_tag(:h1, 'Welcome to TwiTEC!', class: 'font-weight-bold welcome-text text-center align-middle') +
-          image_tag('speech-bubble.png', class: 'welcome-pic text-center d-block align-self-center')
+      user_nav_notsignedin
+    end
+  end
+
+  def user_nav_signedin
+    content_tag(:div, class: 'w-75 d-flex mx-auto mt-3') do
+      image_tag('prof-pic.jpg', class: 'cu-prof-pic') +
+        content_tag(:p, link_to(current_user.name, user_path(current_user)),
+                    class: 'cu-nav-name font-weight-bold ml-3 mt-4')
+    end +
+      content_tag(:div) do
+        content_tag(:ul, class: 'row mx-0 px-0 mt-3 cu-ul') do
+          content_tag(:li, class: 'col-lg-6') do
+            content_tag(:p, current_user.followers.count, class: 'font-weight-bold text-center cu-counts mt-2 mb-1') +
+              content_tag(:p, link_to('followers', followings_path(user_id: current_user.id, users: 'followers')),
+                          class: 'font-weight-bold text-center cu-counts-text text-capitalize')
+          end +
+            content_tag(:li, class: 'col-lg-6') do
+              content_tag(:p, current_user.followed_users.count,
+                          class: 'font-weight-bold text-center cu-counts mt-2 mb-1') +
+                content_tag(:p, link_to('following', followings_path(user_id: current_user.id, users: 'following')),
+                            class: 'font-weight-bold text-center cu-counts-text text-capitalize')
+            end
+        end
       end
+  end
+
+  def user_nav_notsignedin
+    content_tag(:div, class: 'h-100 welcome-container mx-auto d-flex flex-column justify-content-center') do
+      content_tag(:h1, 'Welcome to TwiTEC!', class: 'font-weight-bold welcome-text text-center align-middle') +
+        image_tag('speech-bubble.png', class: 'welcome-pic text-center d-block align-self-center')
     end
   end
 end

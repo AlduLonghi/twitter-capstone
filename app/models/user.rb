@@ -11,4 +11,9 @@ class User < ApplicationRecord
   has_many :followed_users, through: :followings, source: :followed
   has_many :inverse_followings, class_name: 'Following', foreign_key: :followed_id, dependent: :destroy
   has_many :followers, through: :inverse_followings, source: :follower
+
+  def to_follow
+    ids = current_user.followed_users.pluck(:id) << current_user.id
+    User.where.not(id: ids)
+  end
 end

@@ -14,170 +14,167 @@
  *= require_self
  */
 
- @import "bootstrap";
- 
- $sidebar-color: #213346;
- $navbar-color: #51A5E6;
- $grey-text-color: #C9CACC;
- $grey-back-color: #F8F9FA;
- $box-shadow: #E6E6E6;
- $user-name-color:#657C90;
- $welcome-font: 'Architects Daughter', cursive;
+@import "bootstrap";
 
- html, body{
-    background-color: $grey-back-color;
- }
+$sidebar-color: #213346;
+$navbar-color: #51a5e6;
+$grey-text-color: #c9cacc;
+$grey-back-color: #f8f9fa;
+$box-shadow: #e6e6e6;
+$user-name-color:#657c90;
+$welcome-font: 'Architects Daughter', cursive;
 
- a {
-     color: unset;
- }
+html,
+body {
+  background-color: $grey-back-color;
+}
 
- ul {
-     list-style: none;
- }
+a {
+  color: unset;
+}
 
- a:hover {
-     color: unset;
- }
+ul {
+  list-style: none;
+}
 
- .user-box {
+a:hover {
+  color: unset;
+}
+
+.user-box {
   box-shadow: 0 0 10px #98a4a5;
-  margin-top: 20vh;
- }
+  margin-top: 15vh;
+}
 
- .user-container {
-     background-color: $navbar-color;
- }
+.user-container {
+  background-color: $navbar-color;
+}
 
- .sidebar {
-    background-color: $sidebar-color;
-    height: 100vh;
-    width: 100%;
- }
+.sidebar {
+  background-color: $sidebar-color;
+  height: 100vh;
+  width: 100%;
+}
 
- .navbar-color {
-     background-color: $navbar-color;
- }
+.navbar-color {
+  background-color: $navbar-color;
+}
 
- .author-name {
-     font-size: 1.2rem;
- }
+.author-name {
+  font-size: 1.2rem;
+}
 
- .prof-img {
-     height: 7vh;
- }
+.section-head {
+  font-size: 1.2rem;
+  color: $grey-text-color;
+}
 
- .section-head {
-     font-size: 1.2rem;
-     color: $grey-text-color;
- }
+.white-backg {
+  background-color: white;
+}
 
- .white-backg {
-     background-color: white;
- }
+.grey-color {
+  color: $grey-text-color;
+}
 
- .grey-color {
-     color: $grey-text-color
- }
+.red-color {
+  color: red;
+}
 
- .red-color {
-     color: red;
- }
+.cover-img {
+  height: 22rem;
+}
 
- .cover-img {
-     height: 22rem;
- }
+.prof-img {
+  height: 9rem;
+  width: 9rem;
+  border: 1px solid $grey-text-color;
+}
 
- .prof-img {
-     height: 9rem;
-     width: 9rem;
-     border: 1px solid $grey-text-color;
- }
+.user-name {
+  font-size: 1.5rem;
+}
 
- .user-name {
-     font-size: 1.5rem;
- }
+.user-show {
+  width: 95%;
+}
 
- .user-show {
-     width: 95%;
- }
-
- .counts {
+.counts {
   margin-bottom: 0.5rem;
- }
+}
 
- .counts-text {
-     font-size: 0.8rem;
-     color: grey;
- }
- 
- .edit-head {
-     font-size: 2rem;
-     color: $grey-text-color;
- }
+.counts-text {
+  font-size: 0.8rem;
+  color: grey;
+}
 
- .opinion-container {
-    word-wrap: break-word;
-    display: flex;
-    flex-direction: column;
- }
+.edit-head {
+  font-size: 2rem;
+  color: $grey-text-color;
+}
 
- .opinion-box {
-    box-shadow: 0 0 7px $box-shadow;
- }
+.opinion-container {
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+}
 
- .all-op {
+.opinion-box {
+  box-shadow: 0 0 7px $box-shadow;
+}
+
+.all-op {
   font-size: 1rem;
   color: $navbar-color;
- }
+}
 
- .opinion-content {
-     font-size: 1.1rem;
- }
+.opinion-content {
+  font-size: 1.1rem;
+}
 
- .cu-prof-pic {
-     height: 4.5rem;
-     width: 4.5rem;
- }
+.cu-prof-pic {
+  height: 4.5rem;
+  width: 4.5rem;
+}
 
- .cu-nav-name {
-     font-size: 1.2rem;
-     color: $user-name-color;
- }
+.cu-nav-name {
+  font-size: 1.2rem;
+  color: $user-name-color;
+}
 
- .cu-counts {
-     font-size: 1.2rem;
-     color: $grey-text-color;
- }
+.cu-counts {
+  font-size: 1.2rem;
+  color: $grey-text-color;
+}
 
- .cu-counts-text {
-     color: $user-name-color;
- }
+.cu-counts-text {
+  color: $user-name-color;
+}
 
- .cu-ul {
-    box-shadow: 0 0 3px #182a38;
- }
+.cu-ul {
+  box-shadow: 0 0 3px #182a38;
+}
 
- .cu-ul li {
-    box-shadow: 0 0 3px #182a38;
- }
+.cu-ul li {
+  box-shadow: 0 0 3px #182a38;
+}
 
- .welcome-text {
-     font-size: 3vw;
-     font-family: $welcome-font;
-     color: white;
- }
+.welcome-text {
+  font-size: 3vw;
+  font-family: $welcome-font;
+  color: white;
+}
 
- .welcome-container {
-     width: 80%;
- }
+.welcome-container {
+  width: 80%;
+}
 
- .welcome-pic {
-     width: 7rem;
-     height: 7rem;
- }
+.welcome-pic {
+  width: 7rem;
+  height: 7rem;
+}
 
 .nav-logo {
-    width: 3.2vw;
-    height: 5.6vh;
+  width: 3.2rem;
+  height: 3.2rem;
 }

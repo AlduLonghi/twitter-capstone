@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Opinion, type: :model do
   before :each do
-    @user = User.create(name: 'aldana', email: 'aldu@gmail.com', password: '123456', password_confirmation: '123456')
-    @opinion = @user.opinions.build(content: 'hello, this a opinion for testing')
-    @favorite = @opinion.favorites.build(user_id: @user.id)
+    @user = User.create(name: 'aldana', email: 'alduabril@gmail.com', password: '123456', password_confirmation: '123456')
+    @opinion = Opinion.create(content: 'hello, this a opinion for testing', author_id: @user.id)
+    @favorite = Favorite.create(user_id: @user.id, opinion_id: @opinion.id)
   end
 
   it { should have_many(:favorites) }

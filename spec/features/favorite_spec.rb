@@ -1,7 +1,7 @@
 describe 'Favorite Process', type: :feature do
     before :each do
-      @user = User.create(name: 'estebanlonghi7', email: 'estebanjaja@gmail1.com', password: '123456', password_confirmation: '123456')
-      @user2 = User.create(name: 'cecilialonghi7', email: 'ceciliasota@gmail.com', password: '123456', password_confirmation: '123456')
+      @user = User.create(name: 'estebanlonghi99', email: 'estebanjaja@gmail99.com', password: '123456', password_confirmation: '123456')
+      @user2 = User.create(name: 'cecilialonghi99', email: 'ceciliasota@gmail99.com', password: '123456', password_confirmation: '123456')
       @opinion = Opinion.create(author_id: @user2.id, content: 'hi this is a opinion test')
     end
   
@@ -12,8 +12,9 @@ describe 'Favorite Process', type: :feature do
       click_button 'Log in'
       
       visit user_path(@user2)
-      find(:css, 'fa.fa-heart.grey-color').click
-      expect(page).to have_css("fa.fa-heart.red-color")
+      find(:css, '.fav-link').click
+      visit favorites_path(user_id: @user.id)
+      expect(page).to have_content 'hi this is a opinion test'
     end
 
   end

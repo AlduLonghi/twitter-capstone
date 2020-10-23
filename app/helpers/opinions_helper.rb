@@ -14,7 +14,8 @@ module OpinionsHelper
     fav = Favorite.find_by(user_id: current_user.id, opinion_id: opinion.id)
     if fav
       content_tag(:span, class: 'd-flex') do
-        link_to(content_tag(:i, nil, class: 'fa fa-heart red-color'), favorite_path(opinion.id), method: :delete) +
+        link_to(content_tag(:i, nil, class: 'fa fa-heart red-color'),
+                            favorite_path(opinion.id), method: :delete) +
           (if opinion.favorites.count.positive?
              content_tag(:p, opinion.favorites.count, class: 'ml-2 fav-count font-weight-bold')
            end)
@@ -22,7 +23,7 @@ module OpinionsHelper
     else
       content_tag(:span, class: 'd-flex') do
         link_to(content_tag(:i, nil, class: 'fa fa-heart grey-color'),
-                favorites_path(opinion_id: opinion.id), method: :post) +
+                favorites_path(opinion_id: opinion.id), method: :post, class: 'fav-link') +
           (if opinion.favorites.count.positive?
              content_tag(:p, opinion.favorites.count, class: 'ml-2 fav-count font-weight-bold')
            end)

@@ -19,10 +19,9 @@
         </div>
         <div class="col-lg-10 px-0 offset-2 main-container">
           <div class="navbar justify-content-end navbar-color py-2">
-        <!--<p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>-->
           <%= navbar %>
           </div>
+          <%= alert_notice(alert, notice) %>
           <%= yield %>
         </div>
       </div>

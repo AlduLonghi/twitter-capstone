@@ -76,4 +76,12 @@ module ApplicationHelper
         image_tag('speech-bubble.png', class: 'welcome-pic text-center d-block align-self-center')
     end
   end
+
+  def alert_notice(alert, notice)
+    if alert != nil
+      content_tag(:div, alert, class: 'alert alert-danger')
+    elsif notice != nil
+      content_tag(:div, notice, class: 'alert alert-success')
+    end
+  end
 end

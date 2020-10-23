@@ -15,10 +15,11 @@ class FollowingsController < ApplicationController
   def create
     @following = current_user.followings.build(followed_id: params[:id])
     if @following.save
-      redirect_back(fallback_location: root_path) 
+      redirect_back(fallback_location: root_path)
     else
-      flash[:alert] = "Oops, something went wrong"
+      flash[:alert] = 'Oops, something went wrong'
       redirect_to root_path
+    end
   end
 
   def destroy

@@ -78,7 +78,7 @@ module ApplicationHelper
   end
 
   def alert_notice(flash)
-    if !flash.alert.nil? 
+    if !flash.alert.nil?
       content_tag(:div, alert, class: 'alert alert-danger')
     elsif !flash.notice.nil?
       content_tag(:div, notice, class: 'alert alert-success')

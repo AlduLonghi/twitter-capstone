@@ -9,9 +9,9 @@ class FavoritesController < ApplicationController
   def create
     @favorite = current_user.favorites.build(opinion_id: params[:opinion_id])
     if @favorite.save
-      redirect_back(fallback_location: root_path) 
+      redirect_back(fallback_location: root_path)
     else
-      flash[:notice] = "Ups, something went wrong"
+      flash[:notice] = 'Ups, something went wrong'
       redirect_to root_path
     end
   end

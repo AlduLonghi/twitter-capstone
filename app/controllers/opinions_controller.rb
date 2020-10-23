@@ -41,9 +41,9 @@ class OpinionsController < ApplicationController
   end
 
   def trends
-    @today_trend = Opinion.today_trend.most_favorites.first(10)
-    @week_trend = Opinion.week_trend.most_favorites.first(10)
-    @historical = Opinion.most_favorites.first(10)
+    @today_trend = Opinion.today_trend.most_favorites
+    @week_trend = Opinion.week_trend.most_favorites
+    @historical = Opinion.most_favorites
   end
 
   private

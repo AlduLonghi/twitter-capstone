@@ -52,9 +52,9 @@ This project consisted on building a Twitter based application where you can pub
 
 - $ bundle install
 
-- $ rake db:create
+- $ rails db:create
 
-- $ rake db:migrate
+- $ rails db:migrate
 
 - $ rails server
 
@@ -77,6 +77,14 @@ This project consisted on building a Twitter based application where you can pub
 - $ rake db:migrate
 
 - $ rails server
+
+### Running tests
+ 
+1. Open terminal
+
+2. Run:
+
+- $ rspec
 
 ## Author 
 

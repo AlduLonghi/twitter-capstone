@@ -1,3 +1,80 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.user-box {
+  box-shadow: 0 0 10px #98a4a5;
+  margin-top: 15vh;
+}
+
+.user-container {
+  background-color: $navbar-color;
+}
+
+.cover-img {
+  height: 18vw;
+}
+
+.prof-img {
+  height: 9rem;
+  width: 9rem;
+  border: 1px solid $grey-text-color;
+}
+
+.user-name {
+  font-size: 1.5rem;
+}
+
+.user-show {
+  width: 95%;
+}
+
+.counts {
+  margin-bottom: 0.5rem;
+}
+
+.counts-text {
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.edit-head {
+  font-size: 2rem;
+  color: $grey-text-color;
+}
+
+.cu-prof-pic {
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
+.cu-nav-name {
+  font-size: 1.2rem;
+  color: $user-name-color;
+}
+
+.cu-counts {
+  font-size: 1.2rem;
+  color: $grey-text-color;
+}
+
+.cu-counts-text {
+  color: $user-name-color;
+}
+
+.cu-ul {
+  box-shadow: 0 0 3px #182a38;
+}
+
+.cu-ul li {
+  box-shadow: 0 0 3px #182a38;
+}
+
+.who-to-img {
+  width: 3.7vw;
+  height: 3.7vw;
+}
+
+.who-to-container {
+  box-shadow: 0 0 3px $box-shadow;
+}

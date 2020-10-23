@@ -26,7 +26,7 @@ This project consisted on building a Twitter based application where you can pub
 
 ## Live demo link
 
-[TwiTHEC](https://nameless-escarpment-79956.herokuapp.com/)
+[TwiTECH](https://nameless-escarpment-79956.herokuapp.com/)
 
 ## How to use this app locally?
 

@@ -11,8 +11,8 @@ class FavoritesController < ApplicationController
     if @favorite.save
       redirect_back(fallback_location: root_path) 
     else
+      flash[:notice] = "Ups, something went wrong"
       redirect_to root_path
-      flash[:alert] = "Ups, something went wrong"
     end
   end
 

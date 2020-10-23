@@ -21,11 +21,11 @@ class User < ApplicationRecord
 
   has_one_attached :cover_image
 
-  def prof_pic_attached(user)
-    user.photo.attached? ? photo : 'prof-pic.jpg'
+  def prof_pic_attached
+    photo.attached? ? photo : 'prof-pic.jpg'
   end
 
-  def cover_pic_attached(user)
-    user.cover_image.attached? ? cover_image : 'cover-img.jpg'
+  def cover_pic_attached
+    cover_image.attached? ? cover_image : 'cover-img.jpg'
   end
 end

@@ -9,7 +9,8 @@ class OpinionsController < ApplicationController
   def create
     @opinion = current_user.opinions.build(opinion_params)
     if @opinion.save
-      redirect_back(fallback_location: root_path), flash: {notice: "Opinion published!"}
+      flash[:notice] = "Opinion published!"
+      redirect_back(fallback_location: root_path)
     else
       opinions_timeline
       render :index

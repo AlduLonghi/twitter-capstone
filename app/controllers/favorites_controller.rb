@@ -6,11 +6,14 @@ class FavoritesController < ApplicationController
     @favorites = @user.favorite_opinions
   end
 
-  def new; end
-
   def create
     @favorite = current_user.favorites.build(opinion_id: params[:opinion_id])
-    redirect_back(fallback_location: root_path) if @favorite.save
+    if @favorite.save
+      redirect_back(fallback_location: root_path) 
+    else
+      redirect_to root_path
+      flash[:alert] = "Ups, something went wrong"
+    end
   end
 
   def destroy

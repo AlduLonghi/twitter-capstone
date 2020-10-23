@@ -6,12 +6,10 @@ class OpinionsController < ApplicationController
     opinions_timeline
   end
 
-  def new; end
-
   def create
     @opinion = current_user.opinions.build(opinion_params)
     if @opinion.save
-      redirect_back(fallback_location: root_path)
+      redirect_back(fallback_location: root_path), flash: {notice: "Opinion published!"}
     else
       opinions_timeline
       render :index
@@ -50,7 +48,7 @@ class OpinionsController < ApplicationController
   private
 
   def set_opinions
-    @opinions = Opinion.all.includes(:author, :favorites)
+    @opinions = Opinion.includes(:author, :favorites)
   end
 
   def opinions_timeline

@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <div class="row justify-content-between">
+    <div class="col-lg-8 px-0">
+      <%= image_tag(@user.cover_pic_attached, class: 'd-block w-100 cover-img mb-4') %>
+      <%= show_form(@user) %>
+      <h1 class="all-op text-uppercase font-weight-bold white-backg py-3 px-2"><%= "#{@user.name}'s opinions"%></h1>
+      <%= render partial: "shared/opinion-show", locals: {opinions: @user.opinions.most_recent_opinions} %>
+    </div>
+    <div class="col-lg-4 d-flex justify-content-center my-0">
+      <div class="user-show white-backg pt-5">
+        <%= image_tag(@user.prof_pic_attached, class: 'prof-img d-block mx-auto rounded-circle') %>
+        <h3 class="text-center user-name font-weight-bold pt-3"> <%= @user.name %> <h3>
+        <div class="text-center">
+          <%= follow_btns(@user)%>
+        </div>
+        <div class="row mx-0 mt-3 border-bottom border-top">
+          <div class="col-lg-3 border-right px-0">
+            <p class="counts text-center font-weight-bold mt-2"> 
+              <%= @user.opinions.count %> 
+            </p>
+            <p class="text-center counts-text text-capitalize font-weight-bold"> 
+              <%= link_to('opinions', user_path(@user))%> 
+            </p>
+          </div>
+          <div class="col-lg-3 border-right px-0">
+            <p class="counts text-center font-weight-bold mt-2"> 
+              <%= @user.followers.count %> 
+            </p>
+            <p class="text-center counts-text text-capitalize font-weight-bold"> 
+              <%= link_to('followers', followings_path(user_id: @user.id, users: "followers"))%> 
+            </p>
+          </div>
+          <div class="col-lg-3 border-right px-0">
+            <p class="counts text-center font-weight-bold mt-2"> 
+              <%= @user.followed_users.count %> 
+            </p>
+            <p class="text-center counts-text text-capitalize font-weight-bold"> 
+              <%= link_to('following', followings_path(user_id: @user.id, users: "followings"))%> 
+            </p>
+          </div>
+          <div class="col-lg-3 px-0">
+            <p class="counts text-center font-weight-bold mt-2"> 
+              <%= @user.favorites.count %> 
+            </p>
+            <p class="text-center counts-text text-capitalize font-weight-bold"> 
+              <%= link_to('favorites', favorites_path(user_id: @user.id))%>
+            </p>
+          </div>
+        </div>
+        <p class="font-weight-bold text-center section-head my-4 text-uppercase"> Followed by </p>
+        <%= render partial: "shared/who-to-follow", locals: {users: @followed_by}%>
+      </div>
+    </div>
+  </div>
+</div>

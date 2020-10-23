@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap";
+
+$sidebar-color: #213346;
+$navbar-color: #51a5e6;
+$grey-text-color: #c9cacc;
+$grey-back-color: #f8f9fa;
+$box-shadow: #e6e6e6;
+$user-name-color:#657c90;
+$welcome-font: 'Architects Daughter', cursive;
+
+html,
+body {
+  background-color: $grey-back-color;
+}
+
+a {
+  color: unset;
+}
+
+ul {
+  list-style: none;
+}
+
+a:hover {
+  color: unset;
+}
+
+.sidebar {
+  background-color: $sidebar-color;
+  height: 100vh;
+  width: 100%;
+}
+
+.navbar-color {
+  background-color: $navbar-color;
+}
+
+.section-head {
+  font-size: 1.2rem;
+  color: $grey-text-color;
+}
+
+.white-backg {
+  background-color: white;
+}
+
+.grey-color {
+  color: $grey-text-color;
+}
+
+.red-color {
+  color: red;
+}
+
+.welcome-text {
+  font-size: 3vw;
+  font-family: $welcome-font;
+  color: white;
+}
+
+.welcome-container {
+  width: 80%;
+}
+
+.welcome-pic {
+  width: 7rem;
+  height: 7rem;
+}
+
+.nav-logo {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.site-nav {
+  color: $user-name-color;
+  font-size: 1.2rem;
+}
+
+.site-nav li {
+  height: 2.5vw;
+}
+
+.error-warning {
+  font-size: 1.2rem;
+}

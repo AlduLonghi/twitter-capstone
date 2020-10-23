@@ -1,0 +1,25 @@
+// Place all the styles related to the Favorites controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+$navbar-color: #51a5e6;
+$grey-text-color: #c9cacc;
+
+.fav-count {
+  font-size: 1rem;
+  color: $grey-text-color;
+}
+
+.trend-title {
+  font-size: 1.3rem;
+  color: $navbar-color;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: $grey-text-color;
+}
+
+.op-count {
+  font-size: 0.9vw;
+}

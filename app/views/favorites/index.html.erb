@@ -1,0 +1,11 @@
+<div class="w-75 mx-auto">
+  <div class="white-backg py-3 px-2 text-center d-flex mb-3">
+    <span class="all-op text-uppercase font-weight-bold">
+      <%= "#{@user.name}'s favorite opinions"%>
+    </span>
+    <span class="ml-auto d-block">
+      <%= link_to "Back", user_path(@user) %>
+    </span>
+  </div>
+  <%= render partial: 'shared/opinion-show', locals: {opinions: @favorites} %>
+</div>

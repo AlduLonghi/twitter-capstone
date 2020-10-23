@@ -1,0 +1,13 @@
+<%= form_for(@opinion) do |f| %>
+  <div class="py-3 px-3 mb-3 white-backg rounded">
+    <h3 class="font-weight-bold section-head text-uppercase">What's your opinion?</h3>
+    <div class="form-group mt-3">
+      <%= f.text_field :content, class: 'form-control py-4'%>
+      <%= error_messages(@opinion, :content)%>
+    </div>
+
+    <div>
+      <%= f.submit "Publish", class: 'btn btn-primary d-block ml-auto mb-2'%>
+    </div>
+  </div>
+<% end %>

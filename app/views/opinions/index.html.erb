@@ -1,0 +1,14 @@
+<div class="container-fluid mt-3">
+  <div class="row justify-content-around">
+    <div class="col-lg-8">
+      <%= render 'shared/opinion-form'%>
+      <h1 class="all-op text-uppercase font-weight-bold white-backg py-3 px-2">All opinions</h1>
+      <%= render partial: "shared/opinion-show", locals: {opinions: @opinions_timeline} %>
+    </div>
+    <div class="col-lg-3">
+      <h3 class="font-weight-bold text-center section-head mb-4 text-uppercase"> Who to follow </h3>
+      <%= render partial: "shared/who-to-follow", locals: {users: to_follow}%>
+    </div>
+    </div>
+  </div>
+</div>

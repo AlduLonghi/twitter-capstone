@@ -1,0 +1,28 @@
+// Place all the styles related to the Opinions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$navbar-color: #51a5e6;
+$box-shadow: #e6e6e6;
+
+.author-name {
+  font-size: 1.2rem;
+}
+
+.opinion-container {
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+}
+
+.opinion-box {
+  box-shadow: 0 0 7px $box-shadow;
+}
+
+.all-op {
+  font-size: 1rem;
+  color: $navbar-color;
+}
+
+.opinion-content {
+  font-size: 1.1rem;
+}

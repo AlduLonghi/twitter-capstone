@@ -2,9 +2,11 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before :each do
-    @user = User.create(name: 'aldanalonghii', email: 'aldulon@gmail.com', password: '123456', password_confirmation: '123456')
+    @user = User.create(name: 'aldanalonghii', email: 'aldulon@gmail.com',
+                        password: '123456', password_confirmation: '123456')
     @user1 = User.create(name: 'alduabril', email: 'aldulonghi123@gmail.com')
-    @user2 = User.create(name: 'aldulonghijeje', email: 'aldulonghijeje@gmail.com', password: '123456', password_confirmation: '123456')
+    @user2 = User.create(name: 'aldulonghijeje', email: 'aldulonghijeje@gmail.com',
+                         password: '123456', password_confirmation: '123456')
     @opinion = @user.opinions.build(content: 'hello, this a opinion for testing')
     @favorite = @user.favorites.build(opinion_id: @opinion.id)
     @followed = Following.create(follower_id: @user.id, followed_id: @user2.id)
